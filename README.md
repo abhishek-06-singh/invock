@@ -1,4 +1,5 @@
-# GitHub profile By React, Redux, Redux-thunk `completely mobile responsive`
+# GitHub profile By React, Redux, Redux-thunk 
+### `completely mobile responsive`
 
 This is a simple React application that allows the user to search for a GitHub profile by entering a username. The app fetches data from the GitHub API and displays the user's profile information, including the number of repositories, followers, and following, as well as their email and profile picture.
 
