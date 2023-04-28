@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+# GitHub profile By React, Redux, Redux-thunk
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple React application that allows the user to search for a GitHub profile by entering a username. The app fetches data from the GitHub API and displays the user's profile information, including the number of repositories, followers, and following, as well as their email and profile picture.
 
-## Available Scripts
+## Demo
 
-In the project directory, you can run:
+## Components
 
-### `npm start`
+`Api`
+The Api component is the main component of the app. It is responsible for rendering the search form and handling the submission of the form. The component also renders the ShowProfile component when the data has been fetched successfully.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Props
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- username: the username entered in the search form.
+- repos: the number of public repositories the user has.
+- following: the number of users the user is following.
+- followers: the number of users following the user.
+- email: the user's email.
+- grabbedData: a boolean value that indicates whether the data has been fetched successfully or not.
+- message: a message to display if the user is not found.
 
-### `npm test`
+`Methods`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- handleChange(e): handles the change event of the search form input and dispatches the handleUsername action to update the username state in the store.
+- handleSubmitForm(e): handles the submission of the search form and dispatches the submitForm action to fetch data from the GitHub API
 
-### `npm run build`
+`ShowProfile`
+The ShowProfile component is responsible for rendering the user's profile information when the data has been fetched successfully.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- username: the username of the user.
+- repos: the number of public repositories the user has.
+- following: the number of users the user is following.
+- followers: the number of users following the user.
+- email: the user's email.
+- image_url: the user's profile picture.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Store
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The store contains the state of the application and the reducers that update the state based on the actions dispatched by the components.
 
-### `npm run eject`
+`Actions`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- handleUsername(e): updates the username state in the store when the user enters a username in the search form input.
+- submitForm(e, username): fetches data from the GitHub API and updates the state with the user's profile information if the data is found. If the user is not found, the state is updated with a message indicating that the user was not found.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`Reducer`
+The reducer updates the state of the application based on the actions dispatched by the components.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Initial State
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- username: an empty string.
+- repos: an empty string.
+- following: an empty string.
+- followers: an empty string.
+- email: an empty string.
+- grabbedData: a boolean value that indicates whether the data has been fetched successfully or not.
+- message: an empty string.
+- image_url: an empty string.
 
-## Learn More
+## Dependencies
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+`react`
+`react-dom`
+`redux`
+`react-redux`
+`redux-thunk`
