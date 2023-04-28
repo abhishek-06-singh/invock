@@ -5,6 +5,10 @@ This is a simple React application that allows the user to search for a GitHub p
 
 ## Demo
 
+
+https://user-images.githubusercontent.com/115978151/235074110-f766ad25-eb2e-4ed7-81a6-43096e8b7d36.mp4
+
+
 ## Components
 
 `Api`
