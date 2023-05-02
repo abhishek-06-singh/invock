@@ -30,7 +30,7 @@ Props
 - handleChange(e): handles the change event of the search form input and dispatches the handleUsername action to update the username state in the store.
 - handleSubmitForm(e): handles the submission of the search form and dispatches the submitForm action to fetch data from the GitHub API
 
-`ShowProfile`
+`ShowProfile` .
 The ShowProfile component is responsible for rendering the user's profile information when the data has been fetched successfully.
 
 - username: the username of the user.
